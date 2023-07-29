@@ -11,4 +11,20 @@ const images = [
     url: 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     alt: 'Group of Horses Running',
   },
+  
 ];
+
+const ul = document.querySelector('.gallery');
+function createrTest(images) {
+  return images.map(({ url, alt }) =>
+  `<li><img
+  src='${url}' alt='${alt}' width='420' height='300' style='border: solid 4px orange'/>
+  </li>`).join('')
+};
+ul.insertAdjacentHTML('afterbegin', createrTest(images));
+
+ul.style.display = 'flex';
+ul.style.flexWrap = 'wrap';
+ul.style.listStyle = 'none';
+
+
