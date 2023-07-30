@@ -6,6 +6,7 @@ function getRandomHexColor() {
 
 
 const elements = {
+  div: document.querySelector('#controls'),
   butCreate: document.querySelector('[data-create]'),
   butDestroy: document.querySelector('[data-destroy]'),
   divBox: document.querySelector('#boxes'),
@@ -14,13 +15,14 @@ const elements = {
 
 elements.butCreate.addEventListener('click', createBoxes);
 
-let step = 30;
 
+let step = 30;
 function createBoxes(amount) {
+
   step += 10;
-  amount.value = elements.input.value
+  amount = elements.input.valueAsNumber;
   
-let test= document.createElement('div');
+  let test= document.createElement('div');
   elements.divBox.appendChild(test);
   test.style.width = `${step}px`;
   test.style.height = `${step}px`;
